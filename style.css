@@ -4,59 +4,75 @@ body{
     font-family: 'Encode Sans', sans-serif;
 font-family: 'Roboto', sans-serif;
 }
-div h1 {
+h1 {
     text-align: center;
-    margin-top: 50px;
+    margin-top: auto;
  font-family: 'Roboto';
  font-size: 56px;
  color: #75b79e;
  font-weight: 700 bold;
 }
-.cartas1{
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+}
+.cartas{
     
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 47px;
 }
-.cartas2{display: flex;
-    margin-top: 35px;
-    align-items: center;
+
+
+.front{
+    display: flex;
     justify-content: center;
-    
-}
-.cartas:active {
-    background: blue;
-    cursor: pointer;
-}
-.cartas{
-    background-color: #A7E9AF;
-    width: 117px;
+    align-items: center;
+    box-sizing: border-box;
+    width: 116px;
     height: 146px;
     border-radius: 5px;
-    border: 1px solid #99cea8;
-    box-sizing: border-box;
-    margin-left: 35px;
-    transition: all 0.5s; 
+    background-color: #A7E9AF;
+    border: solid 1px #99CEA8;
+    margin: 17px;
+    transition: all 0.5s;
+    backface-visibility: hidden;
     transform-style: preserve-3d;
+    position: absolute;
+    
 }
+.back{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 116px;
+    height: 146px;
+    border-radius: 5px;
+    background-color: #A7E9AF;
+    border: solid 1px #99CEA8;
+    margin: 17px;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
 img{
     width: 100px;
     height: 100px;
     margin-top: 24px;
     margin-left: 10px;
 }
-
-   
-.front{
-    position: absolute;
-}
-.back{
-    transform: rotateY(180deg);
-}
-.rotatefront{
-    transform: rotateY(-180deg);
-}
-.rotateback{
+.cartas:active .rotateback{
     transform: rotateY(0deg);
+   
+}
+   
+.cartas:active .rotatefront{
+    transform: rotateY(-180deg);
+    cursor: pointer;
 }
